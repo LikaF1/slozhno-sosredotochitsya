@@ -1,0 +1,48 @@
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+.page {
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: url('../images/cover-image-light.png');
+  background-attachment: fixed;
+  background-position: center;
+} 
+.rec-indicator{
+  display: none;
+}
+
+        header {
+            position: relative;
+            max-width: 1024px;
+            height: 768px;
+            margin: 20px;
+            overflow: hidden;
+        }
+header::before,
+header::after {
+  content: '';
+  position: absolute;
+  width: 25px; 
+  height: 25px; 
+  background-color: transparent;
+}
+
+/* Правый верхний угол */
+header::before {
+  top: 20px; 
+  right: 20px; 
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  border-top: 1px solid #353430;
+  border-right: 1px solid #353430;;
+}
+
+/* Нижний левый угол */
+header::after {
+  bottom: 20px;
+  left: 20px; 
+  clip-path: polygon(0 100%, 0 0, 100% 100%);
+  border-bottom: 1px solid #353430;
+  border-left: 1px solid #353430;;
+}
+.header-title{
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
+}
