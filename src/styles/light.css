@@ -15,15 +15,93 @@
   background-position: center;
 }
 /* Для светлой темы */
+
+/* Пример переключения темы */
+
+/* Пример переключения темы */
+:root.theme-light {
+  --accent-color: #ff8dcb;
+  --text-color: #353430;
+}
 .light-theme .rec-indicator {
   display: none; /* Скрыть элемент в светлой теме */
 }
-/* Пример переключения темы */
 
-body.light-theme .rec-indicator {
-  display: none; /* Скрытие элемента в светлой теме */
+/* Правый верхний угол */
+.decorated-zone::before {
+  top: 20px;
+  right: 20px;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  border-top: 1px solid var(--text-color);
+  border-right: 1px solid var(--text-color);
 }
-/* Пример переключения темы */
-:root.theme-light {
-  /* Переменные светлой темы */    
+
+/* Нижний левый угол */
+.decorated-zone::after {
+  bottom: 20px;
+  left: 20px;
+  clip-path: polygon(0 100%, 0 0, 100% 100%);
+  border-bottom: 1px solid var(--text-color);
+  border-left: 1px solid var(--text-color);
 }
+
+.header-title {
+  color: var(--text-color) ;
+}
+.style_focus{
+  color: #ffc2e6;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__theme-menu-button {
+  color: var(--text-color) ;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(50, 49, 45, 0.4);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--text-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.header-description {
+  background-color: var(--accent-color);
+  color:  var(--text-color) ;
+}
+
+.section-title{
+color:  var(--text-color);
+}
+
+.subtitle{
+  background-color: var(--accent-color);
+}
+
+.title-decor{
+   color:  var(--text-color) ;
+}
+
+.text{
+color:  var(--text-color) ;
+}
+
+.text_link{
+  text-shadow: 2px 2px 0 var(--accent-color);
+  color:  var(--text-color) ;
+}
+
+.text_link:hover{
+  /* Если сделать подчеркивания у текста, то у него тоже будет тень, что не желательно */
+  border-bottom: 1px solid var(--text-color) ;
+}
+
+.text_link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+/* Здесь надо предусмотреть переполнение */

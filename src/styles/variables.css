@@ -5,4 +5,7 @@
 */
 :root {
   --accent-color: #ff8dcb;
+  --text-size: 18px;
+  --text-style-family: 'IBM Plex mono',Arial, Helvetica, sans-serif;
+  --text-color: #353430;
 } 
