@@ -1,11 +1,32 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-image: url('../images/cover-image-light.png');
   background-attachment: fixed;
   background-position: center;
 }
+
+.rec-indicator {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: var(--accent-color);
+  padding: 5px;
+  border-radius: 3px;
+  font-size: var(--text-size);
+  font-family: var(--text-style-family);
+}
+
+.rec-indicator::after {
+  content: '';
+  margin-left: 10px;
+  width: 13px;
+  height: 13px;
+  clip-path: circle(50% at 50% 50%);
+  vertical-align: middle;
+  box-shadow: 10px 10px 20px 30px #ff0070;
+  background-color: #ff0070;
+  color: #ff0070;
+}
+
 .rec-indicator {
   display: none;
 }
@@ -13,7 +34,7 @@
 .header {
   position: relative;
   max-width: 1024px;
-  height: 768px;
+  min-height: 768px;
   padding: 20px;
   overflow: hidden;
   display: flex;
@@ -31,7 +52,6 @@
   background-color: transparent;
 }
 
-/* Правый верхний угол */
 .decorated-zone::before {
   top: 20px;
   right: 20px;
@@ -40,7 +60,6 @@
   border-right: 1px solid var(--text-color);
 }
 
-/* Нижний левый угол */
 .decorated-zone::after {
   bottom: 20px;
   left: 20px;
@@ -53,8 +72,9 @@
   margin-block-start: calc(35% - 130px / 2);
   margin-inline-start: -20px;
 }
-.style_focus{
-   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+
+.style_focus {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   color: #ffc2e6;
   font-family: var(--text-style-family);
   text-shadow: 4px 4px 0 var(--accent-color);
@@ -105,7 +125,6 @@
   outline-offset: 1px;
 }
 
-
 .header-description {
   font-size: var(--text-size);
   font-family: var(--text-style-family);
@@ -116,64 +135,71 @@
   min-height: 71px;
   line-height: 23px;
   margin-block-start: clamp(108px, 5%, 162px);
-  color:  var(--text-color) ;
+  color: var(--text-color);
 }
-.main_setion{
-   max-width: 1024px; 
-   padding: 0 20px ; 
+
+.main_setion {
+  max-width: 1024px;
+  padding: 0 20px;
   margin-block-end: 80px;
 }
-.bloc-concentration{
-  display: flex;
-  justify-content: space-between;  
 
+.bloc-concentration {
+  display: flex;
+  justify-content: space-between;
 }
-.section-title{
+
+.section-title {
   font-size: var(--text-size);
   font-family: var(--text-style-family);
   font-weight: bold;
-line-height: 23px;
-color:  var(--text-color);
-width: 315px;
-margin-block-end: 20px;
+  line-height: 23px;
+  color: var(--text-color);
+  width: 315px;
+  margin-block-end: 20px;
 }
 
-.concentration_card-list{
-  list-style-type:none;
+.concentration_card-list {
+  list-style-type: none;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
 }
-.card-list-item{
+
+.card-list-item {
   max-width: 649px;
 }
-.subtitle{
+
+.subtitle {
   margin-block-end: 10px;
   font-size: var(--text-size);
   font-family: var(--text-style-family);
   font-weight: bold;
   background-color: var(--accent-color);
   line-height: 23px;
- 
 }
-.title-decor{
-   color:  var(--text-color) ;
+
+.title-decor {
+  color: var(--text-color);
 }
-.text{
+
+.text {
   font-size: var(--text-size);
   font-family: var(--text-style-family);
-font-weight: normal;
-line-height: 27.5px;
-color:  var(--text-color) ;
+  font-weight: normal;
+  line-height: 27.5px;
+  color: var(--text-color);
 }
-.text_link{
+
+.text_link {
   text-shadow: 2px 2px 0 var(--accent-color);
-  color:  var(--text-color) ;
+  color: var(--text-color);
   text-decoration: none;
 }
-.text_link:hover{
+
+.text_link:hover {
   /* Если сделать подчеркивания у текста, то у него тоже будет тень, что не желательно */
-  border-bottom: 1px solid var(--text-color) ;
+  border-bottom: 1px solid var(--text-color);
 }
 
 .text_link:focus {
@@ -185,146 +211,150 @@ color:  var(--text-color) ;
   outline-offset: 1px;
 }
 
-.attention_card-list{
-  list-style-type:none;
+.attention_card-list {
+  list-style-type: none;
   display: flex;
   column-gap: 20px;
 }
-.no-bold{
+.no-bold {
   font-weight: normal;
 }
-.margin_recomend-subtitle{
+.margin_recomend-subtitle {
   margin-block-end: 0px;
-} 
-.bloc-recommendations{
+}
+.bloc-recommendations {
   display: flex;
   justify-content: space-between;
 }
-.recommendations_card-list{
-  list-style-type:none;
+.recommendations_card-list {
+  list-style-type: none;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-
 }
-.picture_list{
+.picture_list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr) ;
-  max-width: 1004px; 
+  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  max-width: 1004px;
   max-height: 1091px;
   width: 100%;
   gap: 20px;
 }
-/* Здесь надо предусмотреть переполнение */
 
-.sunset_piture{
+.sunset_piture {
   grid-column: 1/3;
   grid-row: 1/2;
-
 }
-.ice-cream_piture{
+
+.ice-cream_piture {
   grid-column: 3/4;
-grid-row: 1/3;
-
+  grid-row: 1/3;
 }
 
-.tape_piture{
+.tape_piture {
   grid-column: 1/2;
   grid-row: 2/4;
-
 }
-.books_piture{
+
+.books_piture {
   grid-row: 2/3;
   grid-column: 2/3;
-
 }
-.street_piture{
+
+.street_piture {
   grid-column: 2/4;
   grid-row: 3/4;
 }
-.img{
+
+.img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.bloc-gallery{
+.bloc-gallery {
   margin-block-end: 60px;
 }
 
-.footer{
+.footer {
   padding: 20px;
   display: flex;
   position: relative;
-max-width: 1024px;
-height: 768px;
-justify-content: center;
+  max-width: 1024px;
+  min-height: 768px;
+  justify-content: center;
 }
-.footer-title{
-align-self: center;
-}
-@media (max-width: 768px) {
 
+.footer-title {
+  align-self: center;
+}
+
+@media (max-width: 768px) {
   .header {
     min-height: 1024px;
     margin-block-end: 62px;
   }
-  
-.header__theme-menu {
-  justify-content: end;
+
+  .header__theme-menu {
+    justify-content: end;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+    row-gap: 10px;
+    margin-block-start: 172px;
+  }
+
+  .header-description {
+    max-width: 364px;
+  }
+
+  .main_setion {
+    max-width: 768px;
+    padding: 0 20px;
+  }
+
+  .attention_card-list {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .picture_list {
+    max-width: 768px;
+    max-height: 780px;
+  }
+
+  .footer {
+    min-height: 1024px;
+  }
 }
 
-.header__theme-menu-list {
-  flex-direction: column;
-  row-gap: 10px;
-  margin-block-start: 172px;
-}
-
-.header-description {
-  max-width: 364px;
-}
-.main_setion{
-  max-width: 768px;
-  padding: 0 20px;
-}
-
-.attention_card-list{
-  flex-direction: column;
-  row-gap: 20px;
-}
-.picture_list{
-  max-width: 768px; 
-max-height: 780px;
-}
-
-.footer{
-min-height: 1024px;
-}
-}
 @media (max-width: 375px) {
+  .bloc-concentration {
+    flex-direction: column;
+  }
 
-  .bloc-concentration{
-    flex-direction: column;  
+  .bloc-recommendations {
+    flex-direction: column;
   }
-  .bloc-recommendations{
-    flex-direction: column;  
-  }
-  .picture_list{
+
+  .picture_list {
     display: block;
   }
-  .img{
-    width: 100%;
-  
-  }
-  .bloc-gallery{
-      min-height: 1300px;
-  }
-  .footer{
-  min-height: 668px;
 
+  .img {
+    width: 100%;
   }
-  .bloc-gallery{
+
+  .bloc-gallery {
+    min-height: 1300px;
+  }
+
+  .footer {
+    min-height: 668px;
+  }
+
+  .bloc-gallery {
     margin-block-end: 0px;
   }
 }

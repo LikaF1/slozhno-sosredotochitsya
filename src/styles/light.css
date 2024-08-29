@@ -1,33 +1,18 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-    
-  */
   background-image: url('../images/cover-image-light.png');
   background-attachment: fixed;
   background-position: center;
 }
-/* Для светлой темы */
 
-/* Пример переключения темы */
-
-/* Пример переключения темы */
 :root.theme-light {
   --accent-color: #ff8dcb;
   --text-color: #353430;
 }
+
 .light-theme .rec-indicator {
-  display: none; /* Скрыть элемент в светлой теме */
+  display: none;
 }
 
-/* Правый верхний угол */
 .decorated-zone::before {
   top: 20px;
   right: 20px;
@@ -36,7 +21,6 @@
   border-right: 1px solid var(--text-color);
 }
 
-/* Нижний левый угол */
 .decorated-zone::after {
   bottom: 20px;
   left: 20px;
@@ -46,15 +30,15 @@
 }
 
 .header-title {
-  color: var(--text-color) ;
+  color: var(--text-color);
 }
-.style_focus{
+.style_focus {
   color: #ffc2e6;
   text-shadow: 4px 4px 0 var(--accent-color);
 }
 
 .header__theme-menu-button {
-  color: var(--text-color) ;
+  color: var(--text-color);
 }
 
 .header__theme-menu-button:hover {
@@ -71,37 +55,35 @@
 
 .header-description {
   background-color: var(--accent-color);
-  color:  var(--text-color) ;
+  color: var(--text-color);
 }
 
-.section-title{
-color:  var(--text-color);
+.section-title {
+  color: var(--text-color);
 }
 
-.subtitle{
+.subtitle {
   background-color: var(--accent-color);
 }
 
-.title-decor{
-   color:  var(--text-color) ;
+.title-decor {
+  color: var(--text-color);
 }
 
-.text{
-color:  var(--text-color) ;
+.text {
+  color: var(--text-color);
 }
 
-.text_link{
+.text_link {
   text-shadow: 2px 2px 0 var(--accent-color);
-  color:  var(--text-color) ;
+  color: var(--text-color);
 }
 
-.text_link:hover{
+.text_link:hover {
   /* Если сделать подчеркивания у текста, то у него тоже будет тень, что не желательно */
-  border-bottom: 1px solid var(--text-color) ;
+  border-bottom: 1px solid var(--text-color);
 }
 
 .text_link:focus-visible {
   outline: 1px solid var(--text-color);
 }
-
-/* Здесь надо предусмотреть переполнение */

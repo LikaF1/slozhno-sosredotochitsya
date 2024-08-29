@@ -1,226 +1,228 @@
-
-
 .page.theme_dark {
   background-color: #000028;
   background-image: url('../images/cover-image-dark.png');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  --accent-color: #ff0070;  
-  --text-color: #F1B2CE;
-  --title-color:#000028;
+  --accent-color: #ff0070;
+  --text-color: #f1b2ce;
+  --title-color: #000028;
 
+  :root.theme-dark {
+    --accent-color: #ff0070;
+    --text-color: #f1b2ce;
+    --title-color: #000028;
+  }
 
-:root.theme-dark {
-   --accent-color: #ff0070;  
-  --text-color: #F1B2CE;
-  --title-color:#000028;
+  body.dark-theme .rec-indicator {
+    display: block;
+  }
 
-}
+  body.dark-theme .rec-indicator {
+    display: block;
+  }
+  .rec-indicator {
+    display: block;
+  }
+  .rec-indicator {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--accent-color);
+    padding: 5px;
+    border-radius: 3px;
+    font-size: var(--text-size);
+    font-family: var(--text-style-family);
+  }
 
-.rec-indicator {
-  position: absolute;
-  top: 10px; /* Отступ от верхнего края */
-  right: 10px; /* Отступ от правого края */
-  font-size: 14px; /* Размер шрифта */
-  color: var(--accent-color); /* Цвет текста */ /* Фоновый цвет */
-  padding: 5px; /* Внутренние отступы */
-  border-radius: 3px; /* Закругленные углы */
-}
+  .rec-indicator::after {
+    content: '';
+    margin-left: 10px;
+    width: 13px;
+    height: 13px;
+    clip-path: circle(50% at 50% 50%);
+    vertical-align: middle;
+    box-shadow: 10px 10px 20px 30px #ff0070;
+    background-color: #ff0070;
+    color: #ff0070;
+  }
 
-.rec-indicator::after {
-  content: '•'; /* Символ точки */
-  margin-left: 5px; /* Отступ между текстом и точкой */
-  font-size: 20px; /* Размер точки */
-  color:var(--accent-color); /* Цвет точки */
-  vertical-align: middle; /* Выравнивание точки по середине строки */
-}
-body.dark-theme .rec-indicator {
-  display: block; /* Отображение элемента в тёмной теме */
-}
-/* Остальные стили */
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    border-top: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+  }
 
-/* Правый верхний угол */
-.decorated-zone::before {
-  top: 20px;
-  right: 20px;
-  clip-path: polygon(100% 0, 0 0, 100% 100%);
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
-}
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+    border-bottom: 1px solid var(--accent-color);
+    border-left: 1px solid var(--accent-color);
+  }
+  .header__theme-menu-button {
+    background-color: transparent;
+    color: var(--accent-color);
+  }
 
-/* Нижний левый угол */
-.decorated-zone::after {
-  bottom: 20px;
-  left: 20px;
-  clip-path: polygon(0 100%, 0 0, 100% 100%);
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
-}
-.header__theme-menu-button {
-  background-color: transparent;
-  color: var(--accent-color) ;
-}
+  .header__theme-menu-button:hover {
+    border: 1px solid rgba(255, 0, 112, 0.4);
+  }
 
-.header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.4);
-}
+  .header__theme-menu-button_active {
+    border: 1px solid var(--accent-color);
+    pointer-events: none;
+  }
 
-.header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
-  pointer-events: none;
-}
+  .header__theme-menu-button:focus {
+    outline: none;
+  }
 
-.header__theme-menu-button:focus {
-  outline: none;
-}
+  .header__theme-menu-button:focus-visible {
+    border-block-end: 1px solid var(--accent-color);
+    outline-offset: 1px;
+  }
 
-.header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color);
-  outline-offset: 1px;
-}
+  .header-description {
+    background-color: var(--accent-color);
+    color: var(--title-color);
+  }
 
+  .section-title {
+    color: var(--accent-color);
+  }
 
-.header-description {
-  background-color: var(--accent-color);
-  color:  var(--title-color) ;
-}
+  .subtitle {
+    background-color: var(--accent-color);
+  }
 
-.section-title{
-color:  var(--accent-color);
-}
+  .title-decor {
+    color: var(--title-color);
+  }
 
-.subtitle{
-  background-color: var(--accent-color);
-}
+  .text {
+    color: var(--text-color);
+  }
 
-.title-decor{
-   color:  var(--title-color) ;
-}
+  .text_link {
+    text-shadow: 2px 2px 0 var(--accent-color);
+    color: var(--text-color);
+  }
 
-.text{
-color: var(--text-color) ;
-}
+  .text_link:hover {
+    border-bottom: 1px solid var(--text-color);
+  }
 
-.text_link{
-  text-shadow: 2px 2px 0 var(--accent-color);
-  color:  var(--text-color) ;
-}
-
-.text_link:hover{
-  /* Если сделать подчеркивания у текста, то у него тоже будет тень, что не желательно */
-  border-bottom: 1px solid var(--text-color) ;
-}
-
-.text_link:focus-visible {
-  outline: 1px solid var(--text-color);
-}
+  .text_link:focus-visible {
+    outline: 1px solid var(--text-color);
+  }
 }
 @media (prefers-color-scheme: dark) {
-:root.theme-dark {
-  --accent-color: #ff0070;  
-  --text-color: #F1B2CE;
-  --title-color:#000028;
+  :root.theme-dark {
+    --accent-color: #ff0070;
+    --text-color: #f1b2ce;
+    --title-color: #000028;
   }
-  
 
+  body.dark-theme .rec-indicator {
+    display: block;
+  }
 
-body.dark-theme .rec-indicator {
-  display: block; /* Отображение элемента в тёмной теме */
-}
-/* Остальные стили */
+  .rec-indicator {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--accent-color);
+    padding: 5px;
+    border-radius: 3px;
+    font-size: var(--text-size);
+    font-family: var(--text-style-family);
+  }
 
-.rec-indicator {
-  position: absolute;
-  top: 10px; /* Отступ от верхнего края */
-  right: 10px; /* Отступ от правого края */
-  font-size: 14px; /* Размер шрифта */
-  color: var(--accent-color); /* Цвет текста */ /* Фоновый цвет */
-  padding: 5px; /* Внутренние отступы */
-  border-radius: 3px; /* Закругленные углы */
-}
+  .rec-indicator::after {
+    content: '';
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    clip-path: circle(50% at 50% 50%);
+    vertical-align: middle;
+    box-shadow: 0px 0px 4px 2px #ff0070;
+    background-color: #ff0070;
+    color: #ff0070;
+  }
 
-.rec-indicator::after {
-  content: '•'; /* Символ точки */
-  margin-left: 5px; /* Отступ между текстом и точкой */
-  font-size: 20px; /* Размер точки */
-  color:var(--accent-color); /* Цвет точки */
-  vertical-align: middle; /* Выравнивание точки по середине строки */
-}
-/* Правый верхний угол */
-.decorated-zone::before {
-  top: 20px;
-  right: 20px;
-  clip-path: polygon(100% 0, 0 0, 100% 100%);
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
-}
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    border-top: 1px solid var(--accent-color);
+    border-right: 1px solid var(--accent-color);
+  }
 
-/* Нижний левый угол */
-.decorated-zone::after {
-  bottom: 20px;
-  left: 20px;
-  clip-path: polygon(0 100%, 0 0, 100% 100%);
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
-}
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+    border-bottom: 1px solid var(--accent-color);
+    border-left: 1px solid var(--accent-color);
+  }
 
-.header__theme-menu-button {
-  background-color: transparent;
-  color: var(--accent-color) ;
-}
+  .header__theme-menu-button {
+    background-color: transparent;
+    color: var(--accent-color);
+  }
 
-.header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.4);
-}
+  .header__theme-menu-button:hover {
+    border: 1px solid rgba(255, 0, 112, 0.4);
+  }
 
-.header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
-  pointer-events: none;
-}
+  .header__theme-menu-button_active {
+    border: 1px solid var(--accent-color);
+    pointer-events: none;
+  }
 
-.header__theme-menu-button:focus {
-  outline: none;
-}
+  .header__theme-menu-button:focus {
+    outline: none;
+  }
 
-.header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color);
-  outline-offset: 1px;
-}
+  .header__theme-menu-button:focus-visible {
+    border-block-end: 1px solid var(--accent-color);
+    outline-offset: 1px;
+  }
 
+  .header-description {
+    background-color: var(--accent-color);
+    color: var(--title-color);
+  }
 
-.header-description {
-  background-color: var(--accent-color);
-  color:  var(--title-color) ;
-}
+  .section-title {
+    color: var(--accent-color);
+  }
 
-.section-title{
-color:  var(--accent-color);
-}
+  .subtitle {
+    background-color: var(--accent-color);
+  }
 
-.subtitle{
-  background-color: var(--accent-color);
-}
+  .title-decor {
+    color: var(--title-color);
+  }
 
-.title-decor{
-   color:  var(--title-color) ;
-}
+  .text {
+    color: var(--text-color);
+  }
 
-.text{
-color:  var(--text-color) ;
-}
+  .text_link {
+    text-shadow: 2px 2px 0 var(--accent-color);
+    color: var(--text-color);
+  }
 
-.text_link{
-  text-shadow: 2px 2px 0 var(--accent-color);
-  color:  var(--text-color) ;
-}
+  .text_link:hover {
+    border-bottom: 1px solid var(--text-color);
+  }
 
-.text_link:hover{
-  /* Если сделать подчеркивания у текста, то у него тоже будет тень, что не желательно */
-  border-bottom: 1px solid var(--text-color) ;
-}
-
-.text_link:focus-visible {
-  outline: 1px solid var(--text-color);
-}
+  .text_link:focus-visible {
+    outline: 1px solid var(--text-color);
+  }
 }
