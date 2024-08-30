@@ -1,7 +1,10 @@
 .page {
+  max-width: 1024px;
   background-image: url('../images/cover-image-light.png');
   background-attachment: fixed;
   background-position: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rec-indicator {
