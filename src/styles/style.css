@@ -24,7 +24,8 @@
 
 .rec-indicator::after {
   display: inline-block;
-  content: '';
+  content: '';  
+  vertical-align: middle;
   margin-inline-start: 10px;
   width: 9px;
   height: 9px;
