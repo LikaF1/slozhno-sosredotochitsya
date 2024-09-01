@@ -1,89 +1,52 @@
 .page.theme_light {
+  background-color: var(--background-color);
   background-image: url('../images/cover-image-light.png');
-  background-attachment: fixed;
-  background-position: center;
+  --accent-color: #ff8dcb;
+  --currentColor: #353430;
+  --background-color: #fff1f7;
+  --header-title: #ffc2e6;
+  --theme-color: #353430;
 }
 
-:root.theme-light {
-  --accent-color: #ff8dcb;
-  --text-color: #353430;
+.header__theme-menu-button {
+  color: var(--theme-color);
+}
+
+
+.subtitle {
+  color: var(--theme-color);
 }
 
 .light-theme .rec-indicator {
   display: none;
 }
 
-.decorated-zone::before {
-  top: 20px;
-  right: 20px;
-  clip-path: polygon(100% 0, 0 0, 100% 100%);
-  border-top: 1px solid var(--text-color);
-  border-right: 1px solid var(--text-color);
-}
 
-.decorated-zone::after {
-  bottom: 20px;
-  left: 20px;
-  clip-path: polygon(0 100%, 0 0, 100% 100%);
-  border-bottom: 1px solid var(--text-color);
-  border-left: 1px solid var(--text-color);
-}
+@media (prefers-color-scheme: dark) {
+  .page.theme_light {
+    background-color: var(--background-color);
+    background-image: url('../images/cover-image-light.png');
+    --accent-color: #ff8dcb;
+    --currentColor: #353430;
+    --background-color: #fff1f7;
+    --header-title: #ffc2e6;
+    --theme-color: #353430;
 
-.header-title {
-  color: var(--text-color);
-}
-.style_focus {
-  color: #ffc2e6;
-  text-shadow: 4px 4px 0 var(--accent-color);
-}
 
-.header__theme-menu-button {
-  color: var(--text-color);
-}
+    .header__theme-menu-button {
+      color: var(--theme-color);
+    }
+  }
 
-.header__theme-menu-button:hover {
-  border: 1px solid rgba(50, 49, 45, 0.4);
-}
+  .light-theme .rec-indicator {
+    display: none;
+  }
 
-.header__theme-menu-button_active {
-  border: 1px solid var(--text-color);
-}
+  .subtitle {
+    color: var(--theme-color);
+  }
 
-.header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--text-color);
-}
-
-.header-description {
-  background-color: var(--accent-color);
-  color: var(--text-color);
-}
-
-.section-title {
-  color: var(--text-color);
-}
-
-.subtitle {
-  background-color: var(--accent-color);
-}
-
-.title-decor {
-  color: var(--text-color);
-}
-
-.text {
-  color: var(--text-color);
-}
-
-.text_link {
-  text-shadow: 2px 2px 0 var(--accent-color);
-  color: var(--text-color);
-}
-
-.text_link:hover {
-  /* Если сделать подчеркивания у текста, то у него тоже будет тень, что не желательно */
-  border-bottom: 1px solid var(--text-color);
-}
-
-.text_link:focus-visible {
-  outline: 1px solid var(--text-color);
+  .section-title {
+    color: var(--theme-color);
+  }
 }

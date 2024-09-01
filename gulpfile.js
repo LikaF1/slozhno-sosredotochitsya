@@ -28,7 +28,7 @@ function html() {
         minifyCSS: true,
         keepClosingSlash: true
     };
-  return gulp.src('src/**/*.html')
+  return gulp.src('src/*.html')
         .pipe(plumber())
                 .on('data', function(file) {
               const buferFile = Buffer.from(htmlMinify.minify(file.contents.toString(), options))
@@ -42,7 +42,7 @@ function css() {
     const plugins = [autoprefixer(),
         mediaquery()
     ]
-  return gulp.src('src/blocks/**/*.css')
+  return gulp.src('src/styles/*.css')
         .pipe(plumber())
         .pipe(concat('bundle.css'))
         .pipe(postcss(plugins))
@@ -51,7 +51,7 @@ function css() {
 }
 
 function images() {
-  return gulp.src('src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}')
+  return gulp.src('src/images/*.{jpg,png,svg,gif,ico,webp,avif}')
     .pipe(gulp.dest('dist/images'))
     .pipe(browserSync.reload({stream: true}));
 }
@@ -61,9 +61,9 @@ function clean() {
 }
 
 function watchFiles() {
-  gulp.watch(['src/**/*.html'], html);
-  gulp.watch(['src/blocks/**/*.css'], css);
-  gulp.watch(['src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
+  gulp.watch(['src/*.html'], html);
+  gulp.watch(['src/styles/*.css'], css);
+  gulp.watch(['src/images/*.{jpg,png,svg,gif,ico,webp,avif}'], images);
 }
 
 const build = gulp.series(clean, gulp.parallel(html, css, images));

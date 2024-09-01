@@ -1,18 +1,12 @@
 .page.theme_dark {
-  background-color: #000028;
+  background-color: var(--background-color);
   background-image: url('../images/cover-image-dark.png');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   --accent-color: #ff0070;
-  --text-color: #f1b2ce;
+  --currentColor: #f1b2ce;
   --title-color: #000028;
-
-  :root.theme-dark {
-    --accent-color: #ff0070;
-    --text-color: #f1b2ce;
-    --title-color: #000028;
-  }
+  --background-color: #000028;
+  --header-title: #DB00FF;
+  --theme-color: #ff0070;
 
   body.dark-theme .rec-indicator {
     display: block;
@@ -21,109 +15,42 @@
   body.dark-theme .rec-indicator {
     display: block;
   }
+
   .rec-indicator {
     display: block;
-  }
-  .rec-indicator {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: var(--accent-color);
-    padding: 5px;
-    border-radius: 3px;
-    font-size: var(--text-size);
-    font-family: var(--text-style-family);
-  }
-
-  .rec-indicator::after {
-    content: '';
-    margin-left: 10px;
-    width: 13px;
-    height: 13px;
-    clip-path: circle(50% at 50% 50%);
-    vertical-align: middle;
-    box-shadow: 10px 10px 20px 30px #ff0070;
-    background-color: #ff0070;
-    color: #ff0070;
-  }
-
-  .decorated-zone::before {
-    top: 20px;
-    right: 20px;
-    clip-path: polygon(100% 0, 0 0, 100% 100%);
-    border-top: 1px solid var(--accent-color);
-    border-right: 1px solid var(--accent-color);
-  }
-
-  .decorated-zone::after {
-    bottom: 20px;
-    left: 20px;
-    clip-path: polygon(0 100%, 0 0, 100% 100%);
-    border-bottom: 1px solid var(--accent-color);
-    border-left: 1px solid var(--accent-color);
-  }
-  .header__theme-menu-button {
-    background-color: transparent;
-    color: var(--accent-color);
-  }
-
-  .header__theme-menu-button:hover {
-    border: 1px solid rgba(255, 0, 112, 0.4);
-  }
-
-  .header__theme-menu-button_active {
-    border: 1px solid var(--accent-color);
-    pointer-events: none;
-  }
-
-  .header__theme-menu-button:focus {
-    outline: none;
-  }
-
-  .header__theme-menu-button:focus-visible {
-    border-block-end: 1px solid var(--accent-color);
-    outline-offset: 1px;
   }
 
   .header-description {
-    background-color: var(--accent-color);
     color: var(--title-color);
-  }
-
-  .section-title {
-    color: var(--accent-color);
-  }
-
-  .subtitle {
-    background-color: var(--accent-color);
   }
 
   .title-decor {
     color: var(--title-color);
   }
 
-  .text {
-    color: var(--text-color);
+  .header__theme-menu-button {
+    color: var(--accent-color);
   }
 
-  .text_link {
-    text-shadow: 2px 2px 0 var(--accent-color);
-    color: var(--text-color);
-  }
-
-  .text_link:hover {
-    border-bottom: 1px solid var(--text-color);
-  }
-
-  .text_link:focus-visible {
-    outline: 1px solid var(--text-color);
+  .section-title {
+    color: var(--theme-color);
   }
 }
+
 @media (prefers-color-scheme: dark) {
-  :root.theme-dark {
+  .page {
+    background-color: var(--background-color);
+    background-image: url('../images/cover-image-dark.png');
     --accent-color: #ff0070;
-    --text-color: #f1b2ce;
+    --currentColor: #f1b2ce;
     --title-color: #000028;
+    --background-color: #000028;
+    --header-title: #DB00FF;
+    --theme-color: #ff0070;
+  }
+
+  body.dark-theme .rec-indicator {
+    display: block;
   }
 
   body.dark-theme .rec-indicator {
@@ -131,98 +58,22 @@
   }
 
   .rec-indicator {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: var(--accent-color);
-    padding: 5px;
-    border-radius: 3px;
-    font-size: var(--text-size);
-    font-family: var(--text-style-family);
-  }
-
-  .rec-indicator::after {
-    content: '';
-    margin-left: 10px;
-    width: 20px;
-    height: 20px;
-    clip-path: circle(50% at 50% 50%);
-    vertical-align: middle;
-    box-shadow: 0px 0px 4px 2px #ff0070;
-    background-color: #ff0070;
-    color: #ff0070;
-  }
-
-  .decorated-zone::before {
-    top: 20px;
-    right: 20px;
-    clip-path: polygon(100% 0, 0 0, 100% 100%);
-    border-top: 1px solid var(--accent-color);
-    border-right: 1px solid var(--accent-color);
-  }
-
-  .decorated-zone::after {
-    bottom: 20px;
-    left: 20px;
-    clip-path: polygon(0 100%, 0 0, 100% 100%);
-    border-bottom: 1px solid var(--accent-color);
-    border-left: 1px solid var(--accent-color);
-  }
-
-  .header__theme-menu-button {
-    background-color: transparent;
-    color: var(--accent-color);
-  }
-
-  .header__theme-menu-button:hover {
-    border: 1px solid rgba(255, 0, 112, 0.4);
-  }
-
-  .header__theme-menu-button_active {
-    border: 1px solid var(--accent-color);
-    pointer-events: none;
-  }
-
-  .header__theme-menu-button:focus {
-    outline: none;
-  }
-
-  .header__theme-menu-button:focus-visible {
-    border-block-end: 1px solid var(--accent-color);
-    outline-offset: 1px;
+    display: block;
   }
 
   .header-description {
-    background-color: var(--accent-color);
     color: var(--title-color);
-  }
-
-  .section-title {
-    color: var(--accent-color);
-  }
-
-  .subtitle {
-    background-color: var(--accent-color);
   }
 
   .title-decor {
     color: var(--title-color);
   }
 
-  .text {
-    color: var(--text-color);
+  .header__theme-menu-button {
+    color: var(--accent-color);
   }
 
-  .text_link {
-    text-shadow: 2px 2px 0 var(--accent-color);
-    color: var(--text-color);
-  }
-
-  .text_link:hover {
-    border-bottom: 1px solid var(--text-color);
-  }
-
-  .text_link:focus-visible {
-    outline: 1px solid var(--text-color);
+  .section-title {
+    color: var(--theme-color);
   }
 }
