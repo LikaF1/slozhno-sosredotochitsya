@@ -6,11 +6,11 @@
   --header-title: #ffc2e6;
   --theme-color: #353430;
   --title-color: #353430;
-  --btn-border:rgba(50, 49, 45, 0.4);
-  
-  .rec-indicator {
-  display: none;
+  --btn-border: rgba(50, 49, 45, 0.4);
 }
+
+.rec-indicator {
+  display: none;
 }
 
 .light-theme .rec-indicator {
@@ -21,5 +21,4 @@
   .page.theme_light {
     background-image: url('../images/cover-image-light.png');
   }
-
 }

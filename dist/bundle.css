@@ -1,3 +1,21 @@
+.page.theme_dark {
+  background-image: url("../images/cover-image-dark.png");
+  --accent-color: #ff0070;
+  --currentColor: #f1b2ce;
+  --title-color: #000028;
+  --background-color: #000028;
+  --header-title: #db00ff;
+  --theme-color: #ff0070;
+  --btn-border: rgba(255, 0, 112, 0.4);
+}
+
+.dark-theme .rec-indicator {
+  display: block;
+}
+
+.rec-indicator {
+  display: block;
+}
 /* Глобальные стили для проекта, их можно дополнять и менять по желанию */
 
 *,
@@ -44,6 +62,24 @@ a {
 
 button {
   cursor: pointer;
+}
+.page.theme_light {
+  background-image: url("../images/cover-image-light.png");
+  --accent-color: #ff8dcb;
+  --currentColor: #353430;
+  --background-color: #fff1f7;
+  --header-title: #ffc2e6;
+  --theme-color: #353430;
+  --title-color: #353430;
+  --btn-border: rgba(50, 49, 45, 0.4);
+}
+
+.rec-indicator {
+  display: none;
+}
+
+.light-theme .rec-indicator {
+  display: none;
 }
 .page {
   max-width: 1024px;
@@ -409,6 +445,31 @@ button {
   --theme-color: #353430;
   --title-color: #353430;
   --btn-border: rgba(50, 49, 45, 0.4);
+}
+@media (prefers-color-scheme: dark) {
+  .page {
+    background-image: url("../images/cover-image-dark.png");
+    --accent-color: #ff0070;
+    --currentColor: #f1b2ce;
+    --title-color: #000028;
+    --background-color: #000028;
+    --header-title: #db00ff;
+    --theme-color: #ff0070;
+    --btn-border: rgba(255, 0, 112, 0.4);
+  }
+
+  .dark-theme .rec-indicator {
+    display: block;
+  }
+
+  .rec-indicator {
+    display: block;
+  }
+}
+@media (prefers-color-scheme: light) {
+  .page.theme_light {
+    background-image: url("../images/cover-image-light.png");
+  }
 }
 @media (max-width: 768px) {
   .header {

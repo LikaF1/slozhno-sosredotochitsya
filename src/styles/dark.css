@@ -4,18 +4,17 @@
   --currentColor: #f1b2ce;
   --title-color: #000028;
   --background-color: #000028;
-  --header-title: #DB00FF;
+  --header-title: #db00ff;
   --theme-color: #ff0070;
   --btn-border: rgba(255, 0, 112, 0.4);
+}
 
-  body.dark-theme .rec-indicator {
-    display: block;
-  }
+.dark-theme .rec-indicator {
+  display: block;
+}
 
-  .rec-indicator {
-    display: block;
-  }
-
+.rec-indicator {
+  display: block;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,12 +24,12 @@
     --currentColor: #f1b2ce;
     --title-color: #000028;
     --background-color: #000028;
-    --header-title: #DB00FF;
+    --header-title: #db00ff;
     --theme-color: #ff0070;
     --btn-border: rgba(255, 0, 112, 0.4);
   }
 
-  body.dark-theme .rec-indicator {
+.dark-theme .rec-indicator {
     display: block;
   }
 
