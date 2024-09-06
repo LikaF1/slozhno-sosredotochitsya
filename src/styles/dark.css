@@ -7,14 +7,7 @@
   --header-title: #db00ff;
   --theme-color: #ff0070;
   --btn-border: rgba(255, 0, 112, 0.4);
-}
-
-.dark-theme .rec-indicator {
-  display: block;
-}
-
-.rec-indicator {
-  display: block;
+  --rec-indicator: block;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,13 +20,6 @@
     --header-title: #db00ff;
     --theme-color: #ff0070;
     --btn-border: rgba(255, 0, 112, 0.4);
-  }
-
-.dark-theme .rec-indicator {
-    display: block;
-  }
-
-  .rec-indicator {
-    display: block;
+    --rec-indicator: block;
   }
 }

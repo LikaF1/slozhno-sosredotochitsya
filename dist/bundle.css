@@ -7,17 +7,8 @@
   --header-title: #db00ff;
   --theme-color: #ff0070;
   --btn-border: rgba(255, 0, 112, 0.4);
+  --rec-indicator: block;
 }
-
-.dark-theme .rec-indicator {
-  display: block;
-}
-
-.rec-indicator {
-  display: block;
-}
-/* Глобальные стили для проекта, их можно дополнять и менять по желанию */
-
 *,
 *::before,
 *::after {
@@ -72,14 +63,7 @@ button {
   --theme-color: #353430;
   --title-color: #353430;
   --btn-border: rgba(50, 49, 45, 0.4);
-}
-
-.rec-indicator {
-  display: none;
-}
-
-.light-theme .rec-indicator {
-  display: none;
+  --rec-indicator: none;
 }
 .page {
   max-width: 1024px;
@@ -117,12 +101,12 @@ button {
   border-radius: 50%;
   background-color: #ff0070;
   color: #ff0070;
-  -webkit-box-shadow: 0px 0px 4px 4px #FF0070;
-          box-shadow: 0px 0px 4px 4px #FF0070;
+  -webkit-box-shadow: 0px 0px 4px 4px #ff0070;
+          box-shadow: 0px 0px 4px 4px #ff0070;
 }
 
 .rec-indicator {
-  display: none;
+  display: var(--rec-indicator);
 }
 
 .header {
@@ -445,6 +429,7 @@ button {
   --theme-color: #353430;
   --title-color: #353430;
   --btn-border: rgba(50, 49, 45, 0.4);
+  --rec-indicator: none;
 }
 @media (prefers-color-scheme: dark) {
   .page {
@@ -456,14 +441,7 @@ button {
     --header-title: #db00ff;
     --theme-color: #ff0070;
     --btn-border: rgba(255, 0, 112, 0.4);
-  }
-
-  .dark-theme .rec-indicator {
-    display: block;
-  }
-
-  .rec-indicator {
-    display: block;
+    --rec-indicator: block;
   }
 }
 @media (prefers-color-scheme: light) {
@@ -544,7 +522,7 @@ button {
             column-gap: 20px;
   }
 
-  .bloc-attention>.section-title {
+  .bloc-attention > .section-title {
     width: 236px;
   }
 }
@@ -662,7 +640,7 @@ button {
     width: 315px;
   }
 
-  .bloc-attention>.section-title {
+  .bloc-attention > .section-title {
     width: 315px;
     -webkit-margin-after: 20px;
             margin-block-end: 20px;

@@ -7,14 +7,7 @@
   --theme-color: #353430;
   --title-color: #353430;
   --btn-border: rgba(50, 49, 45, 0.4);
-}
-
-.rec-indicator {
-  display: none;
-}
-
-.light-theme .rec-indicator {
-  display: none;
+  --rec-indicator: none;
 }
 
 @media (prefers-color-scheme: light) {
