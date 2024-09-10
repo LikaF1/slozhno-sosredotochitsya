@@ -42,10 +42,11 @@
   position: relative;
   max-width: 1024px;
   height: 100vh;
-  min-height: 668px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+   min-height: 668px; 
+  /* display: flex;
+  flex-direction: column; */
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
   padding: 20px;
   margin-block-end: 60px;
 }
@@ -69,14 +70,16 @@
 
 .decorated-zone::after {
   bottom: 20px;
-  left: 20px;
+  /* left: 20px; */
   clip-path: polygon(0 100%, 0 0, 100% 100%);
   border-bottom: 1px solid var(--theme-color);
   border-left: 1px solid var(--theme-color);
 }
 
 .header-title {
-  margin-block-start: calc(35% - 130px / 2);
+  /* margin-block-start: calc(35% - 130px / 2); */
+  /* justify-items: start; */
+
   margin-inline-start: -20px;
 }
 
@@ -111,6 +114,7 @@
   text-align: center;
   text-transform: lowercase;
   background-color: transparent;
+  justify-content: center;
   color: var(--theme-color);
 }
 
@@ -137,10 +141,13 @@
   font-family: var(--text-style-family);
   font-weight: bold;
   background-color: var(--accent-color);
-  align-self: flex-end;
+   align-self: center; 
+  justify-self: end;
+  /* justify-content: right; */
   max-width: 491px;
   line-height: 23px;
-  margin-block-start: 114px;
+  /* margin-block-start: 114px; */
+
   color: var(--title-color);
 }
 
@@ -307,15 +314,15 @@
     margin-block-end: 62px;
     min-height: 1024px;
   }
-
+/* 
   .header-title {
     margin-block-start: calc(35% - 150px / 2);
     margin-inline-start: -20px;
-  }
+  } */
 
-  .header-description {
+  /* .header-description {
     margin-block-start: clamp(55px, 9em, 162px);
-  }
+  } */
 
   .header__theme-menu {
     justify-content: end;
@@ -324,7 +331,8 @@
   .header__theme-menu-list {
     flex-direction: column;
     row-gap: 10px;
-    margin-block-start: 172px;
+    justify-content: center;
+    /* align-items: center; */
   }
 
   .header-description {
@@ -383,14 +391,14 @@
     right: 15px;
   }
 
-  .header-title {
+  /* .header-title {
     margin-block-start: calc(35% - 130px / 2);
     margin-inline-start: -20px;
-  }
-
+  } */
+/* 
   .header-description {
     margin-block-start: 55px;
-  }
+  } */
 
   .main_setion {
     margin-block-end: 50px;
@@ -433,7 +441,8 @@
   .header__theme-menu-list {
     flex-direction: column;
     row-gap: 10px;
-    margin-block-start: 65px;
+    justify-content: end;
+    align-items: center;
   }
 
   .text {
