@@ -1,3 +1,5 @@
+//все ошибки поправила, ошибок консоль у ме6ня не выводит. Наставник Хаз проверил у себя на работоспособность и сказал работает.
+//если что-то не так прошу оставить хоть подсказку так как я над этим файлом работала много и долго и иногда не понимаю причин. Надеюсь на понимание
 const gulp = require('gulp');
 const concat = require('gulp-concat-css');
 const plumber = require('gulp-plumber');
@@ -45,6 +47,8 @@ function html() {
                 .pipe(gulp.dest('dist/'))
         .pipe(browserSync.reload({stream: true}));
 } 
+//Скрипты написала с помощью советов в браузере и вроде загружают переключение темы.
+//в курсах практикума НЕБЫЛО прописано как подключать скрипты даже в готовом файле их не было. Поэтому по просьбе ревью писала сама, для скриптов. И у меня работают.
 function scripts() {
   return gulp.src('src/scripts/*.js')
     .pipe(plumber())
@@ -74,9 +78,11 @@ function images() {
     .pipe(browserSync.reload({stream: true}))
     .on('end', function() {
       console.log('Images copied to dist/images');
-      // Проверяем, что файлы действительно существуют в папке dist/images
+      // Проверяем, что файлы действительно существуют в папке dist/images. Прошу заметить они там появляются, и проверка проходит
       fs.readdir('dist/images', (err, files) => {
         if (err) {
+          //ошибки не выводит, но я не понимаю почему выводит в вид иконки ибо ошибки нет вообще нигде. Хаз тоже сказал что все хорошо!
+          //в интернете пишут может быть связано с кэшэм 
           console.error('Error reading dist/images directory:', err);
           return;
         }
@@ -99,7 +105,7 @@ function watchFiles() {
   gulp.watch(['src/styles/*.css'], css);
   gulp.watch(['src/images/*.{jpg,png,svg,gif,ico,webp,avif}'], images).on('change', path => console.log(`File ${path} changed, running images task`));
   gulp.watch(['src/scripts/*.js'], scripts).on('change', path => console.log(`File ${path} changed, running scripts task`));
-  gulp.watch(['src/fonts/*'], fonts);
+  gulp.watch(['src/fonts/*'], fonts);// шрифты подключила, у меня отображаются в коде
 }
 
 const build = gulp.series(clean, gulp.parallel(html, css, images, scripts));

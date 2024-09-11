@@ -114,14 +114,9 @@ button {
   max-width: 1024px;
   height: 100vh;
   min-height: 668px;
-  padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr -webkit-min-content 1fr;
+  grid-template-rows: 1fr min-content 1fr;
   padding: 20px;
   -webkit-margin-after: 60px;
           margin-block-end: 60px;
@@ -153,8 +148,6 @@ button {
 }
 
 .header-title {
-  -webkit-margin-before: calc(35% - 130px / 2);
-          margin-block-start: calc(35% - 130px / 2);
   -webkit-margin-start: -20px;
           margin-inline-start: -20px;
 }
@@ -201,6 +194,9 @@ button {
   text-align: center;
   text-transform: lowercase;
   background-color: transparent;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: var(--theme-color);
 }
 
@@ -228,12 +224,11 @@ button {
   font-family: var(--text-style-family);
   font-weight: bold;
   background-color: var(--accent-color);
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  -ms-flex-item-align: center;
+      align-self: center;
+  justify-self: end;
   max-width: 491px;
   line-height: 23px;
-  -webkit-margin-before: 114px;
-          margin-block-start: 114px;
   color: var(--title-color);
 }
 
@@ -278,12 +273,17 @@ button {
   font-family: var(--text-style-family);
   font-weight: bold;
   background-color: var(--accent-color);
-  line-height: 23px;
+  line-height: 130%;
   color: var(--title-color);
 }
 
 .title-decor {
   color: var(--title-color);
+}
+
+.title-margin-picture {
+  -webkit-margin-after: 20px;
+          margin-block-end: 20px;
 }
 
 .text {
@@ -387,6 +387,8 @@ button {
 .street_piture {
   grid-column: 2/4;
   grid-row: 3/4;
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
 }
 
 .img {
@@ -402,14 +404,16 @@ button {
 }
 
 .footer {
-  padding: 20px;
+  padding: 0 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
   max-width: 1024px;
   height: 100vh;
+  /* Занимает всю высоту окна браузера */
   min-height: 668px;
+  /* Не меньше 668 пикселей */
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -451,27 +455,17 @@ button {
 }
 @media (max-width: 768px) {
   .header {
-    -webkit-margin-after: 62px;
-            margin-block-end: 62px;
+    -webkit-margin-after: 60px;
+            margin-block-end: 60px;
     min-height: 1024px;
-  }
-
-  .header-title {
-    -webkit-margin-before: calc(35% - 150px / 2);
-            margin-block-start: calc(35% - 150px / 2);
-    -webkit-margin-start: -20px;
-            margin-inline-start: -20px;
-  }
-
-  .header-description {
-    -webkit-margin-before: clamp(55px, 9em, 162px);
-            margin-block-start: clamp(55px, 9em, 162px);
   }
 
   .header__theme-menu {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: end;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
 
   .header__theme-menu-list {
@@ -480,8 +474,9 @@ button {
         -ms-flex-direction: column;
             flex-direction: column;
     row-gap: 10px;
-    -webkit-margin-before: 172px;
-            margin-block-start: 172px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .header-description {
@@ -525,6 +520,16 @@ button {
   .bloc-attention > .section-title {
     width: 236px;
   }
+
+  .street_piture {
+    -webkit-margin-before: 1px;
+            margin-block-start: 1px;
+  }
+
+  .main {
+    -webkit-margin-after: 60px;
+            margin-block-end: 60px;
+  }
 }
 @media (max-width: 550px) {
   .header {
@@ -532,6 +537,11 @@ button {
             margin-block-end: 40px;
     min-height: 668px;
     padding: 10px;
+  }
+
+  .main_setion {
+    padding: 0 10px;
+    gap: 20px;
   }
 
   .decorated-zone::before {
@@ -549,16 +559,8 @@ button {
     right: 15px;
   }
 
-  .header-title {
-    -webkit-margin-before: calc(35% - 130px / 2);
-            margin-block-start: calc(35% - 130px / 2);
-    -webkit-margin-start: -20px;
-            margin-inline-start: -20px;
-  }
-
-  .header-description {
-    -webkit-margin-before: 55px;
-            margin-block-start: 55px;
+  .style_focus {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
   .main_setion {
@@ -592,11 +594,19 @@ button {
   }
 
   .picture_list {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
   }
 
   .img {
     width: 100%;
+    height: auto;
   }
 
   .bloc-gallery {
@@ -605,8 +615,9 @@ button {
   }
 
   .section-title {
-    -webkit-margin-after: 20px;
-            margin-block-end: 20px;
+    -webkit-margin-after: 0px;
+            margin-block-end: 0px;
+    width: 355px;
   }
 
   .header-title {
@@ -620,8 +631,12 @@ button {
         -ms-flex-direction: column;
             flex-direction: column;
     row-gap: 10px;
-    -webkit-margin-before: 65px;
-            margin-block-start: 65px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 
   .text {
@@ -630,14 +645,6 @@ button {
 
   .main_setion {
     padding: 0 10px;
-    -webkit-margin-after: 50px;
-            margin-block-end: 50px;
-  }
-
-  .section-title {
-    -webkit-margin-after: 0;
-            margin-block-end: 0;
-    width: 315px;
   }
 
   .bloc-attention > .section-title {
@@ -658,5 +665,24 @@ button {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+
+  .title-margin-picture {
+    -webkit-margin-after: 10px;
+            margin-block-end: 10px;
+  }
+
+  .main {
+    -webkit-margin-after: 40px;
+            margin-block-end: 40px;
+  }
+
+  .street_piture {
+    -webkit-margin-before: 0px;
+            margin-block-start: 0px;
+  }
+
+  .footer {
+    padding: 0 10px;
   }
 }
